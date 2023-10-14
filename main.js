@@ -4,7 +4,21 @@ $(function () {
     const szuloELEM = $(".tarolo");
     new Megjelenit(TODOLIST2, szuloELEM);
 
-    $(window).on("torles", (event) => {
-        console.log(event.detail);
-    });
+   /*  $(window).on("torles", (event) => {
+       // console.log(event.detail);
+    }); */
+    $(window).on("kesz",(event)=>{
+        let objPeldany = event.detail
+        //console.log(event.detail)
+        objPeldany.setHatterszin()
+        TODOLIST2[objPeldany.index].kesz=true;
+        console.log(TODOLIST2)
+    })
+    $(window).on("torles",(event)=>{
+        let objPeldany = event.detail
+        console.log(event.detail)
+        TODOLIST2.splice(objPeldany.index,1)
+        console.log(TODOLIST2)
+         
+    }) 
 });

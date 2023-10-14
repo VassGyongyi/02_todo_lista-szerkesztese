@@ -10,14 +10,18 @@ class Megjelenit {
         this.tablaElem = szuloElem.children("table");
 
         this.tablazatbaIr();
+       
 
     }
     tablazatbaIr() {
-        for (let index = 0; index < this.#list.length; index++) {
+        this.#list.forEach((elem, index) =>{
+            new MegjelenitSor(elem, this.tablaElem, index);
+        })
+        /* for (let index = 0; index < this.#list.length; index++) {
             const elem = this.#list[index];
 
             new MegjelenitSor(elem, this.tablaElem);
-        }
+        } */
     }
 }
 export default Megjelenit;
